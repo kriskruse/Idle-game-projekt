@@ -1,23 +1,20 @@
-//right menu// 
+//right menu   Upgrades// 
 
 
 
 
-//left menu//
+//left menu   FSU / Buildings//
 
 
 
 
-//top menu//
+//top menu    Resources//
 
 
 
 
 
-//buttom menu//
-
-
-
+//buttom menu   Hideable buttons / Save, Load //
 
 
 
@@ -29,6 +26,7 @@ var myGamePiece;
 var blueblock;
 var dank;
 var troll;
+var gamebackground;
 
 
 //define area//
@@ -37,10 +35,12 @@ var myGameArea;
 //updatere canvas og komponeneter//
 function updateGameArea() {
     myGameArea.clear();
+    gamebackground.update();
     myGamePiece.update();
     blueblock.update();
     dank.update();
     troll.update();
+    
 }
 
 //Canvas//
@@ -49,7 +49,6 @@ var myGameArea = {
     start: function () {
         this.canvas.width = 1519;
         this.canvas.height = 734;
-        document.backgroundColor = "#CCCCCC";
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.interval = setInterval(updateGameArea, 20);
@@ -86,6 +85,7 @@ function component(width, height, color, x, y, type) {
 // (width, height, color, x, y, type) //
 function startGame() {
     myGameArea.start();
+    gamebackground = new component(1519, 734, "image/background.jpg", 0, 0, "image");
     myGamePiece = new component(30, 30, "red", 10, 120);
     blueblock = new component(15, 15, "blue", 30, 20);
     dank = new component(50, 50, "image/porn.jpg", 30, 100, "image");

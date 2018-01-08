@@ -1,25 +1,3 @@
-//right menu   Upgrades// 
-
-
-
-
-//left menu   FSU / Buildings//
-
-
-
-
-//top menu    Resources//
-
-
-
-
-
-//buttom menu   Hideable buttons / Save, Load //
-
-
-
-
-
 //Map//
 //definer componenter//
 var myGamePiece;
@@ -47,8 +25,8 @@ function updateGameArea() {
 var myGameArea = {
     canvas: document.createElement("canvas"),
     start: function () {
-        this.canvas.width = 1519;
-        this.canvas.height = 734;
+        this.canvas.width = 500;
+        this.canvas.height = 700;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.interval = setInterval(updateGameArea, 20);
@@ -57,9 +35,13 @@ var myGameArea = {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
 };
+function setup(){
+    
+}
+
 
 //create component function//
-function component(width, height, color, x, y, type) {
+function Component(width, height, color, x, y, type) {
     if (type === "image") {
         this.image = new Image();
         this.image.src = color;
@@ -76,7 +58,7 @@ function component(width, height, color, x, y, type) {
             ctx.fillStyle = color;
             ctx.fillRect(this.x, this.y, this.width, this.height);
         }
-    }
+    };
 }
 
 
@@ -85,9 +67,33 @@ function component(width, height, color, x, y, type) {
 // (width, height, color, x, y, type) //
 function startGame() {
     myGameArea.start();
-    gamebackground = new component(1519, 734, "image/background.jpg", 0, 0, "image");
-    myGamePiece = new component(30, 30, "red", 10, 120);
-    blueblock = new component(15, 15, "blue", 30, 20);
-    dank = new component(50, 50, "image/porn.jpg", 30, 100, "image");
-    troll = new component(400, 400, "image/troll.jpg", 400, 200, "image");
+    gamebackground = new Component(1519, 734, "image/background.jpg", 0, 0, "image");
+    myGamePiece = new Component(30, 30, "red", 10, 120);
+    blueblock = new Component(15, 15, "blue", 30, 20);
+    dank = new Component(50, 50, "image/porn.jpg", 30, 100, "image");
+    troll = new Component(400, 400, "image/troll.jpg", 400, 200, "image");
 }
+
+
+//right menu   Upgrades// 
+
+
+
+
+//left menu   FSU / Buildings//
+
+
+
+
+//top menu    Resources//
+
+
+
+
+
+//buttom menu   Hideable buttons / Save, Load //
+
+
+
+
+

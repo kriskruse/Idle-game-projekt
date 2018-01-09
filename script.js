@@ -25,8 +25,8 @@ function updateGameArea() {
 var myGameArea = {
     canvas: document.createElement("canvas"),
     start: function () {
-        this.canvas.width = 500;
-        this.canvas.height = 700;
+        this.canvas.width = 1080;
+        this.canvas.height = 1080;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.interval = setInterval(updateGameArea, 20);

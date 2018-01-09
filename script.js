@@ -67,7 +67,7 @@ function Component(width, height, color, x, y, type) {
 // (width, height, color, x, y, type) //
 function startGame() {
     myGameArea.start();
-    gamebackground = new Component(1519, 734, "image/background.jpg", 0, 0, "image");
+    gamebackground = new Component(736, 1421, "image/HEXSheet.png", 0, 0, "image");
     myGamePiece = new Component(30, 30, "red", 10, 120);
     blueblock = new Component(15, 15, "blue", 30, 20);
     dank = new Component(50, 50, "image/porn.jpg", 30, 100, "image");
